@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+@keyframes flutuando {
+    from {transform: rotate(-8deg) translateY(0);}
+
+    to {transform: rotate(-8deg) translateY(-9px);}
+}
+
+body {
+    background-color: #3687ba;
+
+    display: grid;
+
+    place-content: center;
+
+    height: 100vh;
+
+    transition: background-color 1s ease;
+
+    overflow: hidden;
+}
+
+.container {
+    animation: flutuando 1.8s infinite alternate linear;
+
+    border: 1px solid rgba(34, 34, 34, 0.4);
+
+    background-color: rgba(17, 17, 17, 0.2);
+
+    padding: 5px 10px;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 3px;
+
+    box-shadow: -3px 3px rgba(0, 0, 0, .75);
+
+    transition: background-color .3s ease;
+}
+.container:hover { background-color: rgba(17, 17, 17, 0.3); }
+
+.container input { cursor: pointer; }
+
+/* input color */
+.container input[type=color] {
+    background-color: transparent;
+
+    border: none;
+
+    height: 50px;
+    width: 46px;
+
+    transition-property: height, width;
+    transition: .2s ease;
+}
+.container input[type="color"]::-webkit-color-swatch {
+    border-radius: 100px;
+    border: 1px solid rgba(34, 34, 34, 0.6);
+}
+.container input[type=color]:hover {
+    height: 80px;
+    width: 76px;
+}
+.container input[type=color]:active {
+    height: 60px;
+    width: 56px;
+}
+
+/* input button */
+.container input[type=button] {
+    border: 1px solid rgba(34, 34, 34, 0.6);
+
+    font: 1em Verdana, Geneva, Tahoma, sans-serif;
+
+    color: rgba(17, 17, 17, .8);
+
+    margin: 5px 0;
+    padding: 5px 10px;
+
+    background-color: transparent;
+
+    height: 40px;
+    width: 120px;
+
+    transition-property: background-color, height, width, font-size;
+    transition: .2s ease;
+}
+.container input[type=button]:hover {
+    background-color: rgba(17, 17, 17, .1);
+
+    height: 60px;
+    width: 140px;
+
+    font-size: 1.3em;
+}
+.container input[type=button]:active { background-color: rgba(17, 17, 17, .3) }
