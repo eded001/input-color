@@ -1,0 +1,1 @@
+inputButton.onclick = () => document.body.style.backgroundColor = inputColor.value;
